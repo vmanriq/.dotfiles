@@ -11,6 +11,13 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+    use('axelvc/template-string.nvim')
+    --wpm package
+    use('jcdickinson/wpm.nvim')
     use({
         'rose-pine/neovim',
         as = 'rose-pine',
@@ -18,6 +25,7 @@ return require('packer').startup(function(use)
             vim.cmd('colorscheme rose-pine')
         end
     })
+    use('lewis6991/gitsigns.nvim')
     use {
         'embark-theme/vim',
         as = 'embark',

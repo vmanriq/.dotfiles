@@ -81,8 +81,10 @@ _G.packer_plugins = {
   },
   ["barbecue.nvim"] = {
     config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rbarbecue\frequire\0" },
-    load_after = {},
-    loaded = true,
+    load_after = {
+      ["nvim-web-devicons"] = true
+    },
+    loaded = false,
     needs_bufread = false,
     path = "/Users/manriq/.local/share/nvim/site/pack/packer/opt/barbecue.nvim",
     url = "https://github.com/utilyre/barbecue.nvim"
@@ -103,6 +105,11 @@ _G.packer_plugins = {
     path = "/Users/manriq/.local/share/nvim/site/pack/packer/start/embark",
     url = "https://github.com/embark-theme/vim"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/Users/manriq/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/Users/manriq/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -112,6 +119,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/manriq/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/manriq/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -161,8 +173,10 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
   ["nvim-web-devicons"] = {
-    loaded = true,
-    path = "/Users/manriq/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    after = { "barbecue.nvim" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/manriq/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
@@ -190,6 +204,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/manriq/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["template-string.nvim"] = {
+    loaded = true,
+    path = "/Users/manriq/.local/share/nvim/site/pack/packer/start/template-string.nvim",
+    url = "https://github.com/axelvc/template-string.nvim"
   },
   ["toggleterm.nvim"] = {
     config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0" },
@@ -221,30 +240,29 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/manriq/.local/share/nvim/site/pack/packer/start/vim-prettier",
     url = "https://github.com/prettier/vim-prettier"
+  },
+  ["wpm.nvim"] = {
+    loaded = true,
+    path = "/Users/manriq/.local/share/nvim/site/pack/packer/start/wpm.nvim",
+    url = "https://github.com/jcdickinson/wpm.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
-time([[Config for toggleterm.nvim]], false)
 -- Config for: rose-pine
 time([[Config for rose-pine]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
 time([[Config for rose-pine]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
+time([[Config for toggleterm.nvim]], false)
 -- Config for: embark
 time([[Config for embark]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\23colorscheme embark\bcmd\bvim\0", "config", "embark")
 time([[Config for embark]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd nvim-web-devicons ]]
-vim.cmd [[ packadd barbecue.nvim ]]
-
--- Config for: barbecue.nvim
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rbarbecue\frequire\0", "config", "barbecue.nvim")
-
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 time([[Sequenced loading]], false)

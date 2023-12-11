@@ -1,3 +1,5 @@
+
+local api = require "nvim-tree.api"
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -24,6 +26,8 @@ end
 
 
 vim.keymap.set('n', '<C-b>', ':NvimTreeToggle<CR>', { desc = 'nvim-tree: Toggle' })
+-- create keymap to create files
+--vim.keymap.set('n', '<leader>cf', api.tree.fs.create, { desc = 'nvim-tree: Create File' })
 
 -- OR setup with some options
 require("nvim-tree").setup({
@@ -38,6 +42,6 @@ require("nvim-tree").setup({
         group_empty = true,
     },
     filters = {
-        dotfiles = false,
+        dotfiles = true,
     },
 })

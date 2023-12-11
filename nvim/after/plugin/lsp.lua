@@ -8,6 +8,7 @@ require('mason-lspconfig').setup({
         lsp.default_setup,
     }
 })
+
 -- Fix Undefined global 'vim'
 --lsp.nvim_workspace()
 -- define global vim

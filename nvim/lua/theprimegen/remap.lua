@@ -1,3 +1,4 @@
+local opts = {noremap = true, silent = true}
 
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
@@ -20,6 +21,23 @@ end)
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
+
+-- Select all
+vim.keymap.set("n", "<C-a>", "gg<S-v>G")
+
+-- New tab
+vim.keymap.set("n", "te", ":tabedit")
+vim.keymap.set("n", "<tab>", ":tabnext<Return>", opts)
+vim.keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
+-- Split window
+vim.keymap.set("n", "ss", ":split<Return>", opts)
+vim.keymap.set("n", "sv", ":vsplit<Return>", opts)
+
+-- Resize window
+vim.keymap.set("n", "<C-w><left>", "<C-w><")
+vim.keymap.set("n", "<C-w><right>", "<C-w>>")
+vim.keymap.set("n", "<C-w><up>", "<C-w>+")
+vim.keymap.set("n", "<C-w><down>", "<C-w>-")
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
