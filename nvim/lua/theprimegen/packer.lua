@@ -6,33 +6,27 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+    use 'segeljakt/vim-silicon'
+    use({
+        "bluz71/vim-nightfly-guicolors",
+    })
+    use({
+        "norcalli/nvim-colorizer.lua",
+        event = { "BufRead", "BufNewFile" },
+    })
+    use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
+    use("folke/noice.nvim")
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.4',
         -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } }
+        requires = { 'nvim-lua/plenary.nvim', { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }, "nvim-tree/nvim-web-devicons" }
     }
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
     use('axelvc/template-string.nvim')
-    --wpm package
-    use('jcdickinson/wpm.nvim')
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
-        end
-    })
     use('lewis6991/gitsigns.nvim')
-    use {
-        'embark-theme/vim',
-        as = 'embark',
-        config = function()
-            vim.cmd('colorscheme embark')
-        end
-    }
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
@@ -45,18 +39,6 @@ return require('packer').startup(function(use)
 
     })
 
-    use({
-        "utilyre/barbecue.nvim",
-        tag = "*",
-        requires = {
-            "SmiteshP/nvim-navic",
-            "nvim-tree/nvim-web-devicons", -- optional dependency
-        },
-        after = "nvim-web-devicons",       -- keep this if you're using NvChad
-        config = function()
-            require("barbecue").setup()
-        end,
-    })
     use(
         "RRethy/vim-illuminate"
     )
@@ -67,11 +49,10 @@ return require('packer').startup(function(use)
         after = "nvim-treesitter",
         requires = "nvim-treesitter/nvim-treesitter",
     })
-    use('nvim-treesitter/playground')
-    use('preservim/nerdcommenter')
     use('mbbill/undotree')
     use('williamboman/mason.nvim')
     use('williamboman/mason-lspconfig.nvim')
+    use('WhoIsSethDaniel/mason-tool-installer.nvim')
     use('neovim/nvim-lspconfig')
     use { "akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
