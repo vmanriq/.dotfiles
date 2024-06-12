@@ -1,4 +1,10 @@
 {
 	"optOut": false,
-	"lastUpdateCheck": 1711476115079
+	"lastUpdateCheck": 1717509816256,
+	"update": {
+		"latest": "12.12.1",
+		"current": "10.8.1",
+		"type": "major",
+		"name": "@aws-amplify/cli-internal"
+	}
 }
